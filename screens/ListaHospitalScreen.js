@@ -4,7 +4,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useFocusEffect } from '@react-navigation/native';
 
 const ListaHospitalScreen = ({ navigation }) => {
-  const [hospitais, setHospitais] = useState([]); //pesquisa só pelo nome do hospital
+  const [hospitais, setHospitais] = useState([]); //pesquisa apenas pelo nome do hospital
   const [searchQuery, setSearchQuery] = useState('');
 
   const carregarHospitais = async () => {
@@ -66,7 +66,7 @@ const ListaHospitalScreen = ({ navigation }) => {
               style={styles.botaoPesquisa}
               onPress={filtrarHospitais}
             >
-              <Text>Pesquisar</Text>
+              <Text style={styles.detalhesText}>Pesquisar</Text>
             </TouchableOpacity>
 
             
@@ -77,16 +77,15 @@ const ListaHospitalScreen = ({ navigation }) => {
                 carregarHospitais();
               }}
             >
-              <Text>Limpar</Text>
+              <Text style={styles.detalhesText}>Limpar</Text>
             </TouchableOpacity>
         </View>
 
-        
           <TouchableOpacity
             style={styles.botaoRosa}
             onPress={() => navigation.navigate('NovoHospital')}
           >
-            <Text style={styles.textoBotaoRosa}>Adicionar Hospital</Text>
+            <Text style={styles.textoBotaoRosa}>Cadastrar Hospital</Text>
           </TouchableOpacity>
       </View>
       
@@ -104,7 +103,6 @@ const ListaHospitalScreen = ({ navigation }) => {
 const styles = StyleSheet.create({
 
   superior: {
-    //backgroundColor: 'green',
     width: '100%',
     flexDirection: 'column',
     alignItems: 'center',
@@ -114,7 +112,6 @@ const styles = StyleSheet.create({
   container: {
     padding: 25,
     height: '100%',
-    //flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
     backgroundColor: '#FFD6D6'
@@ -122,7 +119,6 @@ const styles = StyleSheet.create({
 
   barraAcao: {
     flexDirection: 'row',
-    //alignItems: 'center',
     justifyContent: 'space-between',
     width: '100%',
     marginBottom: 10,
@@ -136,6 +132,7 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     paddingHorizontal: 10,
   },
+
   botaoPesquisa: {
     marginLeft: 10,
     backgroundColor: 'pink',
@@ -145,6 +142,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+
   botaoLimpar: {
     marginLeft: 10,
     backgroundColor: 'lightgray',
@@ -154,6 +152,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+
   titulo: {
     fontSize: 25,
     fontWeight: 'bold',
@@ -161,19 +160,18 @@ const styles = StyleSheet.create({
   },
 
   hospitalItem: {
-    //backgroundColor: 'green',
-    flexDirection: 'row',
-    justifyContent: 'space-between',
+    flexDirection: 'column',
+    justifyContent: 'center',
     alignItems: 'center',
-    width: 450,
-    marginBottom: 10,
+    width: 220,
+    marginVertical: 10,
   },
 
   itemText: {
     color: 'black',
     fontWeight: 'bold',
-    fontSize: 20
-
+    fontSize: 20,
+    marginBottom: 10
   },
 
   botaoDetalhes: {
@@ -184,6 +182,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+
   botaoRosa: {
     backgroundColor: 'pink',
     borderRadius: 10,
@@ -191,10 +190,14 @@ const styles = StyleSheet.create({
     paddingHorizontal: 20,
     marginBottom: 10,
   },
+
   textoBotaoRosa: {
-    color: 'white',
     fontWeight: 'bold',
   },
+
+  detalhesText: {
+    fontWeight: 'bold'
+  }
 });
 
 export default ListaHospitalScreen;

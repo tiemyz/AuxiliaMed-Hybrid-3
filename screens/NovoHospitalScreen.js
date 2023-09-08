@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { View, Text, TextInput, Button, StyleSheet } from 'react-native';
+import { View, Text, TextInput, Button, StyleSheet, TouchableOpacity } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import { ScrollView } from 'react-native-gesture-handler';
 
 const NovoHospitalScreen = ({ navigation }) => {
   const [nome, setNome] = useState('');
@@ -9,7 +10,6 @@ const NovoHospitalScreen = ({ navigation }) => {
   const [consulta, setConsulta] = useState('');
   const [exame, setExame] = useState('');
   const [localidade, setLocalidade] = useState('');
-
 
   const adicionarHospital = async () => {
     try {
@@ -30,42 +30,73 @@ const NovoHospitalScreen = ({ navigation }) => {
 
   return (
     <View style={styles.container}>
-      <Text>Novo Médico</Text>
-      <TextInput
-        placeholder="Nome"
-        value={nome}
-        onChangeText={(text) => setNome(text)}
-      />
-      <TextInput
-        placeholder="Login"
-        value={login}
-        onChangeText={(text) => setLogin(text)}
-      />
+      <Text style={styles.titulo}>Cadastro de Hospital</Text>
 
-      <TextInput
-        placeholder="Cadastro"
-        value={cadastro}
-        onChangeText={(text) => setCadastro(text)}
-      />
+      <ScrollView>
+        <View style={styles.contentView}>
+          <Text style={styles.inputTitle}>Nome do Hospital:</Text>
+          <TextInput
+            style={styles.inputHospital} // input
+            placeholder="Nome do hospital"
+            value={nome}
+            onChangeText={(text) => setNome(text)}
+          />
 
-      <TextInput
-        placeholder="Consulta"
-        value={consulta}
-        onChangeText={(text) => setConsulta(text)}
-      />
+          <Text style={styles.inputTitle}>Detalhes de Login:</Text>
+          <TextInput
+            style={styles.inputHospitalText} // input
+            multiline={true} 
+            placeholder="Como fazer Login no site do hospital"
+            value={login}
+            onChangeText={(text) => setLogin(text)}
+          />
 
-      <TextInput
-        placeholder="Exame"
-        value={exame}
-        onChangeText={(text) => setExame(text)}
-      />
+          <Text style={styles.inputTitle}>Detalhes de Cadastro:</Text>
+          <TextInput
+            style={styles.inputHospitalText} // input
+            multiline={true} 
+            placeholder="Como fazer Cadastro no site do hospital"
+            value={cadastro}
+            onChangeText={(text) => setCadastro(text)}
+          />
 
-            <TextInput
-        placeholder="Localidade"
-        value={localidade}
-        onChangeText={(text) => setLocalidade(text)}
-      />
-      <Button title="Adicionar Médico" onPress={adicionarHospital} />
+          <Text style={styles.inputTitle}>Detalhes de Consulta:</Text>
+          <TextInput
+            style={styles.inputHospitalText} // input
+            multiline={true} 
+            placeholder="Como marcar uma Consulta no site do hospital"
+            value={consulta}
+            onChangeText={(text) => setConsulta(text)}
+          />
+
+          <Text style={styles.inputTitle}>Detalhes de Exame:</Text>
+          <TextInput
+            style={styles.inputHospitalText} // input
+            multiline={true} 
+            placeholder="Como acessar um Exame no site do hospital"
+            value={exame}
+            onChangeText={(text) => setExame(text)}
+          />
+  
+          <Text style={styles.inputTitle}>Detalhes de Localidade:</Text>
+          <TextInput
+            style={styles.inputHospitalText} // input
+            multiline={true} 
+            placeholder="Localidade do hospital"
+            value={localidade}
+            onChangeText={(text) => setLocalidade(text)}
+          />
+        </View>
+      </ScrollView>
+
+      <View style={styles.viewDetalhes}>
+        <TouchableOpacity
+          style={styles.botaoDetalhes}
+          onPress={adicionarHospital}
+        >
+          <Text style={styles.detalhesText}>Adicionar Hospital</Text>
+        </TouchableOpacity>
+      </View>
     </View>
   );
 };
@@ -75,11 +106,64 @@ const styles = StyleSheet.create({
   container: {
     padding: 25,
     height: '100%',
-    //flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
     backgroundColor: '#FFD6D6'
   },
+
+  titulo: {
+    fontSize: 25,
+    fontWeight: 'bold',
+    marginBottom: 10,
+  },
+
+  contentView: {
+    flex: 1,
+    padding: 16,
+  },
+
+  inputHospital: {
+    width: 300,
+    marginVertical: 15,
+    paddingVertical: 5,
+    borderBottomWidth: 1,
+    borderBottomColor: '#000000',
+  },
+
+  inputHospitalText: {
+    width: 300,
+    height: 200, 
+    borderWidth: 1,
+    borderColor: '#000000',
+    marginVertical: 15,
+    borderRadius: 8,
+    paddingHorizontal: 12,
+    fontSize: 16,
+    fontStyle: 'italic'
+  },
+
+  inputTitle: {
+    fontWeight: 'bold',
+    fontSize: 20
+  },
+
+  viewDetalhes: {
+    flexDirection: 'row'
+  },
+
+  botaoDetalhes: {
+    backgroundColor: 'lightblue',
+    borderRadius: 10,
+    paddingVertical: 10,
+    paddingHorizontal: 20,
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginHorizontal: 10,
+  },
+
+  detalhesText: {
+    fontWeight: 'bold'
+  }
 
 });
 
