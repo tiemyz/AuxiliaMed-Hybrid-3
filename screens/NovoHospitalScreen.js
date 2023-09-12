@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Text, TextInput, Button, StyleSheet, TouchableOpacity } from 'react-native';
+import { View, Text, TextInput, StyleSheet, TouchableOpacity } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { ScrollView } from 'react-native-gesture-handler';
 
@@ -36,7 +36,7 @@ const NovoHospitalScreen = ({ navigation }) => {
         <View style={styles.contentView}>
           <Text style={styles.inputTitle}>Nome do Hospital:</Text>
           <TextInput
-            style={styles.inputHospital} // input
+            style={styles.inputHospital} 
             placeholder="Nome do hospital"
             value={nome}
             onChangeText={(text) => setNome(text)}
@@ -44,7 +44,7 @@ const NovoHospitalScreen = ({ navigation }) => {
 
           <Text style={styles.inputTitle}>Detalhes de Login:</Text>
           <TextInput
-            style={styles.inputHospitalText} // input
+            style={styles.inputHospitalText} 
             multiline={true} 
             placeholder="Como fazer Login no site do hospital"
             value={login}
@@ -53,7 +53,7 @@ const NovoHospitalScreen = ({ navigation }) => {
 
           <Text style={styles.inputTitle}>Detalhes de Cadastro:</Text>
           <TextInput
-            style={styles.inputHospitalText} // input
+            style={styles.inputHospitalText} 
             multiline={true} 
             placeholder="Como fazer Cadastro no site do hospital"
             value={cadastro}
@@ -62,7 +62,7 @@ const NovoHospitalScreen = ({ navigation }) => {
 
           <Text style={styles.inputTitle}>Detalhes de Consulta:</Text>
           <TextInput
-            style={styles.inputHospitalText} // input
+            style={styles.inputHospitalText} 
             multiline={true} 
             placeholder="Como marcar uma Consulta no site do hospital"
             value={consulta}
@@ -71,7 +71,7 @@ const NovoHospitalScreen = ({ navigation }) => {
 
           <Text style={styles.inputTitle}>Detalhes de Exame:</Text>
           <TextInput
-            style={styles.inputHospitalText} // input
+            style={styles.inputHospitalText} 
             multiline={true} 
             placeholder="Como acessar um Exame no site do hospital"
             value={exame}
@@ -80,7 +80,7 @@ const NovoHospitalScreen = ({ navigation }) => {
   
           <Text style={styles.inputTitle}>Detalhes de Localidade:</Text>
           <TextInput
-            style={styles.inputHospitalText} // input
+            style={styles.inputHospitalText} 
             multiline={true} 
             placeholder="Localidade do hospital"
             value={localidade}

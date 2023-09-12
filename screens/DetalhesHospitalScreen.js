@@ -52,7 +52,7 @@ const DetalhesHospitalScreen = ({ route, navigation }) => {
         <View style={styles.contentView}>
             <Text style={styles.inputTitle}>Nome do Hospital:</Text>
             <TextInput
-              style={styles.inputHospital} // input
+              style={styles.inputHospital} 
               placeholder="Nome do hospital"
               value={nome}
               onChangeText={(text) => setNome(text)}
@@ -60,7 +60,7 @@ const DetalhesHospitalScreen = ({ route, navigation }) => {
 
             <Text style={styles.inputTitle}>Detalhes de Login:</Text>
             <TextInput
-              style={styles.inputHospitalText} // input
+              style={styles.inputHospitalText} 
               multiline={true} 
               placeholder="Como fazer Login no site do hospital"
               value={login}
@@ -69,7 +69,7 @@ const DetalhesHospitalScreen = ({ route, navigation }) => {
 
             <Text style={styles.inputTitle}>Detalhes de Cadastro:</Text>
             <TextInput
-              style={styles.inputHospitalText} // input
+              style={styles.inputHospitalText} 
               multiline={true} 
               placeholder="Como fazer Cadastro no site do hospital"
               value={cadastro}
@@ -78,7 +78,7 @@ const DetalhesHospitalScreen = ({ route, navigation }) => {
 
             <Text style={styles.inputTitle}>Detalhes de Consulta:</Text>
             <TextInput
-              style={styles.inputHospitalText} // input
+              style={styles.inputHospitalText} 
               multiline={true} 
               placeholder="Como marcar uma Consulta no site do hospital"
               value={consulta}
@@ -87,7 +87,7 @@ const DetalhesHospitalScreen = ({ route, navigation }) => {
 
             <Text style={styles.inputTitle}>Detalhes de Exame:</Text>
             <TextInput
-              style={styles.inputHospitalText} // input
+              style={styles.inputHospitalText}
               multiline={true} 
               placeholder="Como acessar um Exame no site do hospital"
               value={exame}
@@ -96,7 +96,7 @@ const DetalhesHospitalScreen = ({ route, navigation }) => {
 
             <Text style={styles.inputTitle}>Detalhes de Localidade:</Text>
             <TextInput
-              style={styles.inputHospitalText} // input
+              style={styles.inputHospitalText} 
               multiline={true} 
               placeholder="Localidade do hospital"
               value={localidade}
