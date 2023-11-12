@@ -11,3 +11,5 @@ App com CRUD completo + Google Firebase.
 ####Para rodar:
 
 #####npx expo start
+
+(Para desenvolver o projeto, nós utilizados a versão WEB.)
