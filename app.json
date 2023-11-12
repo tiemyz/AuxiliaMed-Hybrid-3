@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "ExpoAsyncStorageExample",
-    "slug": "ExpoAsyncStorageExample",
+    "name": "AuxiliaMed",
+    "slug": "AuxiliaMed",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
